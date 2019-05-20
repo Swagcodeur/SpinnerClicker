@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spinner Clicker</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="img/logo.png">
+	<link rel="stylesheet"  href="page.css">
+</head>
+<body>
+	<header>
+		<img src="img/logo.png">
+		<h1>Spinner Clicker</h1>
+	</header>
+	<main>
+		<section id="fidget">
+			<h2 onclick="changeNameCompany()">Fidget Spinner</h2>
+			<h2>Company</h2>	
+			<h2 id="score">0 Tours</h2>
+			<p id="fidgetProd">0 tour/s</p>
+			<img id="spinnerClick" src="img/spinner/fidgetspinnerRed1.png" onclick="spinnerClick()">
+		</section>
+		<section id="middleBloc">
+			<article id="btnMiddle">
+				<input type="button" value="Skins" onclick="skinMenu()">
+				<input type="button" value="Ma partie" onclick="accountMenu()">
+			</article>
+			<article id="myAccount">
+				<p>A venir</p>
+			</article>
+			<article id="options">
+				<h2>Skins</h2>
+				<ul id="listSkin">
+					<li id="skin1" onclick="selectedSkin1()">
+						<img src="img/spinner/fidgetspinnerRed1.png" width="64px" height="64px">
+						<p>Skin basique</p>
+						<span class="infoSkin">Fidget Spinner basique<br>1 tour/click</span>
+					</li>
+					<li id="skin2" onclick="selectedSkin2()">
+						<img src="img/spinner/fidgetspinnerBatman.png" width="64px" height="64px">
+						<p>500</p>
+						<span class="infoSkin">Fidget Spinner Batman<br>3 tours/click<br>Coût : 500 tours</span>
+					</li>
+					<li id="skin3"onclick="selectedSkin3()">
+						<img src="img/spinner/fidgetspinnerGalaxy1.png" width="64px" height="64px">
+						<p>10,000</p>
+						<span class="infoSkin">Fidget Spinner Galaxy<br>10 tours/click<br>Coût : 10,000 tours</span>
+					</li>
+						<!-- <li onclick="selectedSkin4()">
+							<img id="skin4"src="img/spinner/fidgetspinnerFloral1.png" width="64px" height="64px">
+							<p>200,000</p>
+							<span class="infoSkin">Fidget Spinner Slav<br>50 tours/click<br>Coût : 200,000 tours</span>
+						</li> -->
+					<li id="skin4" onclick="selectedSkin4()">
+						<img src="img/spinner/fidgetspinnerSlav1.png" width="64px" height="64px">
+						<p>333,333</p>
+						<span class="infoSkin">Fidget Spinner Slav<br>333 tours/click<br>Coût : 333,333 tours</span>
+					</li>
+					<li onclick="selectedSkin5()">
+						<img id="skin5"src="img/spinner/fidgetspinnerSpeed1.png" width="64px" height="64px">
+						<p>5 Millions</p>
+						<span class="infoSkin">Fidget Spinner Aérodynamique<br>1000 tours/click<br>Coût : 5 Millions de tours</span>
+					</li>
+					<li id="skin6" onclick="selectedSkin6()">
+						<img src="img/spinner/fidgetspinnerGot1.png" width="64px" height="64px">
+						<p>300 Millions</p>
+						<span class="infoSkin">Fidget Spinner Game Of thrones<br>10,000 tours/click<br>Coût : 300 Millions de tours</span>
+					</li>
+					<li id="skinSweetie" class="itemSecret"onclick="selectedSkinSweetie()">
+						<img src="img/spinner/fidgetSpinnerSweetie1.png" width="64px" height="64px">
+						<p>Débloqué</p>
+						<span class="infoSkin">Fidget Spinner Sweetie<br>10,000 tours/click<br>Coût : 300 Millions de tours</span>
+					</li>
+				</ul>
+			</article>
+			<article>
+				<img src="">
+			</article>
+		</section>
+		<section id="shop">
+			<h2>Boutique</h2>
+			<article>
+				<input type="button" value="1" name="achat1" onclick="selectAchat1()">
+				<input type="button" value="10" name="achat10" onclick="selectAchat10()">
+				<input type="button" value="50" name="achat50" onclick="selectAchat50()">
+			</article>
+			<ul>
+				<li id="item1" onclick="buyItem1()">
+					<section>
+						<img src="img/breeze.png">
+						<article class="infoItem">
+							<h3>Petite brise</h3>
+							<p>Coût : 15</p>
+							<p>Clicks : 0.1/s</p>
+						</article>
+					</section>
+					<p class="nbItems">0</p>
+				</li>
+				<li id="item2" onclick="buyItem2()">
+					<section>
+						<img src="img/breath.png">
+						<article class="infoItem">
+							<h3>Souffleur</h3>
+							<p>Coût : 100</p>
+							<p>Clicks : 1/s</p>
+						</article>
+					</section>
+					<p class="nbItems">0</p>
+				</li>
+				<li id="item3" onclick="buyItem3()">
+					<section>
+						<img src="img/main.png">
+						<article class="infoItem">
+							<h3>Main qui pousse</h3>
+							<p>Coût : 1,100</p>
+							<p>Clicks : 10/s</p>
+						</article>
+					</section>
+					<p class="nbItems">0</p>
+				</li>
+				<li id="item4" onclick="buyItem4()">
+					<section>
+						<img src="img/ventilateur.png">
+						<article class="infoItem">
+							<h3>Ventilateur</h3>
+							<p>Coût : 12,000</p>
+							<p>Clicks : 50/s</p>
+						</article>
+					</section>
+					<p class="nbItems">0</p>
+				</li>
+				<li id="item5" onclick="buyItem5()">
+					<section>
+						<img src="img/reacteur.png">
+						<article class="infoItem">
+							<h3>Réacteurs</h3>
+							<p>Coût : 130,000</p>
+							<p>Clicks : 260/s</p>
+						</article>
+					</section>
+					<p class="nbItems">0</p>
+				</li>
+				<li id="item6" onclick="buyItem6()">
+					<section>
+						<img src="img/tornadoSimple.png">
+						<article class="infoItem">
+							<h3>Petite tornade</h3>
+							<p>Coût : 1,4 Million</p>
+							<p>Clicks : 1,400/s</p>
+						</article>
+					</section>
+					<p class="nbItems">0</p>
+				</li>
+				<li id="item7" onclick="buyItem7()">
+					<section>
+						<img src="img/tornado.png">
+						<article class="infoItem">
+							<h3>Tornades déchaînés</h3>
+							<p>Coût : 20 Millions</p>
+							<p>Clicks : 7,800/s</p>
+						</article>
+					</section>
+					<p class="nbItems">0</p>
+				</li>
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<p onclick="hiddenClick()"><span id="copyleft">&copy;</span>Arnaud le bg</p>
+	</footer>
+	<script src="script.js"></script>
+</body>
+</html>
