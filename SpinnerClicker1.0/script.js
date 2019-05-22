@@ -13,13 +13,14 @@ let valueItem7 = 20000000; let prodItem7 = 7800; let nbItem7 = 0;
 let valueItem8 = 330000000; let prodItem8 = 44894; let nbItem8 = 0;
 let valueItem9 = 5100000000; let prodItem9 = 1400; let nbItem9 = 0;
 let valueItem10 = 75000000000; let prodItem10 = 1400; let nbItem10 = 0;
-let skin = "fidgetspinnerRed";
-let skin2 = 500;
-let skin3 = 10000;
-let skin4 = 333333;
-let skin5 = 5000000;
-let skin6 = 300000000;
+let skinImg = "fidgetspinnerRed";
+let skinBatman = 500;
+let skinGalaxy = 10000;
+let skinSlav = 333333;
+let skinSpeed = 5000000;
+let skinGot = 300000000;
 let skinSweetie = false;
+let skinMichelDumas = false;
 
 
 
@@ -30,11 +31,10 @@ function spinnerClick(){
 		imgClick=1;
 	}
 	let img = document.querySelector('#spinnerClick');
-	img.src="img/spinner/"+skin+imgClick+".png";
+	img.src="img/spinner/"+skinImg+imgClick+".png";
 	updateScore()
 	h2 = document.querySelector('h2');
 	h2.style.marginTop="1rem";
-	document.querySelector('footer').style.marginTop="1rem";
 }
 
 setInterval(timer, 1000);
@@ -57,6 +57,9 @@ function accountMenu(){
 	document.querySelector('#options').style.visibility="hidden";
 	document.querySelector('#skinSweetie').style.visibility="hidden";
 	document.querySelector('#skinSweetie').style.position="absolute";
+	document.querySelector('#skinMichelDumas').style.visibility="hidden";
+	document.querySelector('#skinMichelDumas').style.position="absolute";
+
 	document.querySelector('#myAccount').style.position="static";
 	if(document.querySelector('#myAccount').style.visibility=="visible"){
 		document.querySelector('#myAccount').style.visibility="hidden";
@@ -77,12 +80,20 @@ function skinMenu(){
 			document.querySelector('#skinSweetie').style.visibility="hidden";
 			document.querySelector('#skinSweetie').style.position="absolute";
 		}
+		if(skinMichelDumas==true){
+			document.querySelector('#skinMichelDumas').style.visibility="hidden";
+			document.querySelector('#skinMichelDumas').style.position="absolute";
+		}
 	}
 	else{
 		document.querySelector('#options').style.visibility="visible";
 		if(skinSweetie==true){
 			document.querySelector('#skinSweetie').style.visibility="visible";
 			document.querySelector('#skinSweetie').style.position="static";
+		}
+		if(skinMichelDumas==true){
+			document.querySelector('#skinMichelDumas').style.visibility="visible";
+			document.querySelector('#skinMichelDumas').style.position="static";
 		}
 	}
 }
@@ -100,7 +111,11 @@ function changeNameCompany(){
 function testSecretSkin() {
 	if(document.querySelector('#fidget>h2:nth-child(1)').innerHTML.toUpperCase()=="HUMMER ROUGE"){
 	skinSweetie=true;
-	}		
+	}
+	if(document.querySelector('#fidget>h2:nth-child(1)').innerHTML.toUpperCase()=="MICHEL DUMAS"){
+	skinMichelDumas=true;
+	}
+
 }
 
 
@@ -230,66 +245,72 @@ function buyItem7(){
 	}
 }
 
-function selectedSkin1(){ 
-	skin="fidgetspinnerRed";
+function selectedSkinRed(){ 
+	skinImg="fidgetspinnerRed";
 	nbTour=1;
 	changeSkin(); 
 }
-function selectedSkin2(){ 
-	if(nbFidgets>=skin2){
-		nbFidgets-=skin2;
-		skin2=0;
-		skin="fidgetspinnerBatman";
+function selectedSkinBatman(){ 
+	if(nbFidgets>=skinBatman){
+		nbFidgets-=skinBatman;
+		skinBatman=0;
+		skinImg="fidgetspinnerBatman";
 		nbTour=3;
-		document.querySelector('#listSkin>li:nth-child(2)>p').innerHTML="Acheté";
+		document.querySelector('#skinBatman>p').innerHTML="Acheté";
 		changeSkin();
 	}
 }
-function selectedSkin3(){ 
-	if(nbFidgets>=skin3){
-		nbFidgets-=skin3;
-		skin3=0;
-		skin="fidgetspinnerGalaxy";
+function selectedSkinGalaxy(){ 
+	if(nbFidgets>=skinGalaxy){
+		nbFidgets-=skinGalaxy;
+		skinGalaxy=0;
+		skinImg="fidgetspinnerGalaxy";
 		nbTour=10;
-		document.querySelector('#listSkin>li:nth-child(3)>p').innerHTML="Acheté";
+		document.querySelector('#skinGalaxy>p').innerHTML="Acheté";
 		changeSkin(); 
 	}
 }
-function selectedSkin4(){ 
-	if(nbFidgets>=skin4){
-		nbFidgets-=skin4;
-		skin4=0;
-		skin="fidgetspinnerSlav";
+function selectedSkinSlav(){ 
+	if(nbFidgets>=skinSlav){
+		nbFidgets-=skinSlav;
+		skinSlav=0;
+		skinImg="fidgetspinnerSlav";
 		nbTour=333;
-		document.querySelector('#listSkin>li:nth-child(4)>p').innerHTML="Acheté";
+		document.querySelector('#skinSlav>p').innerHTML="Acheté";
 		changeSkin();
 	}	
 }
 
-function selectedSkin5(){ 
-	if(nbFidgets>=skin5){
-		nbFidgets-=skin5;
-		skin5=0;
-		skin="fidgetspinnerSpeed"; 
+function selectedSkinSpeed(){ 
+	if(nbFidgets>=skinSpeed){
+		nbFidgets-=skinSpeed;
+		skinSpeed=0;
+		skinImg="fidgetspinnerSpeed"; 
 		nbTour=1000;
-		document.querySelector('#listSkin>li:nth-child(5)>p').innerHTML="Acheté";
+		document.querySelector('#skinSpeed>p').innerHTML="Acheté";
 		changeSkin();
 	}
 }
 
-function selectedSkin6(){
-	if(nbFidgets>=skin6){ 
-	nbFidgets-=skin6;
-	skin6=0;
-	skin="fidgetspinnerGot"; 
+function selectedSkinGot(){
+	if(nbFidgets>=skinGot){ 
+	nbFidgets-=skinGot;
+	skinGot=0;
+	skinImg="fidgetspinnerGot"; 
 	nbTour=10000;
-	document.querySelector('#listSkin>li:nth-child(6)>p').innerHTML="Acheté";
+	document.querySelector('#skinGot>p').innerHTML="Acheté";
 	changeSkin();
 	}
 }
 
 function selectedSkinSweetie(){
-	skin="fidgetspinnerSweetie"; 
+	skinImg="fidgetspinnerSweetie"; 
+	nbTour=10000;
+	changeSkin();
+}
+
+function selectedSkinMichelDumas(){
+	skinImg="fidgetspinnerMichelDumas"; 
 	nbTour=5000;
 	changeSkin();
 }
